@@ -9,6 +9,9 @@ export const TodoWrapper = () => {
     const [todos, setTodos] = useState([]);
 
     const addTodo = todo => {
+        const isDuplicate = todos.some(existingTodo => existingTodo.task === todo);
+        console.log(isDuplicate)
+        
         setTodos([...todos,{id:uuidv4(),task:todo,completed:false,isEditing:false}]);
         console.log(todos)
     };
